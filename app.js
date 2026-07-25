@@ -1,5 +1,5 @@
 const CURRENCIES = {
-  GBP: { symbol: '£', denoms: [20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01] },
+  GBP: { symbol: '£', denoms: [50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01] },
   PLN: { symbol: 'zł', denoms: [200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01] },
   EUR: { symbol: '€', denoms: [200, 100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01] }
 };
@@ -83,9 +83,29 @@ function renderDenoms() {
       setCount(denom, btn.dataset.action === 'inc' ? cur + 1 : cur - 1);
     });
   });
-  denomListEl.querySelectorAll('input').forEach(input => {
+  const inputs = Array.from(denomListEl.querySelectorAll('input'));
+  inputs.forEach((input, idx) => {
     input.addEventListener('change', () => {
       setCount(Number(input.dataset.denom), input.value);
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        setCount(Number(input.dataset.denom), input.value);
+        const next = inputs[idx + 1];
+        if (next) {
+          requestAnimationFrame(() => {
+            const freshInputs = Array.from(denomListEl.querySelectorAll('input'));
+            const target = freshInputs[idx + 1];
+            if (target) {
+              target.focus();
+              target.select();
+            }
+          });
+        } else {
+          input.blur();
+        }
+      }
     });
   });
 }
