@@ -65,7 +65,7 @@ function renderDenoms() {
     row.className = 'denom-row';
     row.innerHTML = `
       <div class="denom-value">${cur.symbol} ${fmt(denom)}</div>
-      <div></div>
+      <button class="row-reset" data-action="reset" data-denom="${denom}" title="Wyzeruj ${cur.symbol} ${fmt(denom)}">↺</button>
       <div class="stepper">
         <button data-action="dec" data-denom="${denom}">−</button>
         <input type="number" inputmode="numeric" min="0" value="${count}" data-denom="${denom}">
@@ -79,8 +79,13 @@ function renderDenoms() {
   denomListEl.querySelectorAll('button').forEach(btn => {
     btn.addEventListener('click', () => {
       const denom = Number(btn.dataset.denom);
+      const action = btn.dataset.action;
+      if (action === 'reset') {
+        setCount(denom, 0);
+        return;
+      }
       const cur = getCount(denom);
-      setCount(denom, btn.dataset.action === 'inc' ? cur + 1 : cur - 1);
+      setCount(denom, action === 'inc' ? cur + 1 : cur - 1);
     });
   });
   const inputs = Array.from(denomListEl.querySelectorAll('input'));

@@ -146,13 +146,29 @@ main {
 
 .denom-row {
   display: grid;
-  grid-template-columns: 64px 1fr 100px 90px;
+  grid-template-columns: 64px 26px 1fr 90px;
   align-items: center;
   gap: 8px;
   background: var(--card-2);
   border-radius: 10px;
   padding: 8px 10px;
 }
+
+.row-reset {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.row-reset:active { background: var(--danger); color: #fff; border-color: var(--danger); }
 
 .denom-value {
   font-weight: 700;
@@ -243,5 +259,5 @@ footer {
 }
 
 @media (min-width: 420px) {
-  .denom-row { grid-template-columns: 64px 1fr 120px 100px; }
+  .denom-row { grid-template-columns: 64px 26px 1fr 100px; }
 }
