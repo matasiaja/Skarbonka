@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skarbonka — 6 Słoików</title>
+<meta name="theme-color" content="#4c1d95">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>💰 Skarbonka</h1>
+  <div class="header-actions">
+    <button id="currencyBtn" class="ghost-btn" title="Zmień walutę">£</button>
+    <button id="resetBtn" class="ghost-btn" title="Wyzeruj">↺</button>
+  </div>
+</header>
+
+<main>
+  <section class="card total-card">
+    <div class="total-row">
+      <span class="total-label">MONEY AMOUNT</span>
+      <span class="total-value" id="totalMoney">£ 0.00</span>
+    </div>
+    <div class="sub-row">
+      <span id="coinCount">0 sztuk</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Nominały</h2>
+    <div class="denoms" id="denomList"></div>
+  </section>
+
+  <section class="card">
+    <h2>6 Słoików</h2>
+    <div class="jars" id="jarList"></div>
+  </section>
+</main>
+
+<footer>
+  <p>Dane zapisują się automatycznie na tym urządzeniu.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
