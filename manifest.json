@@ -1,6 +1,6 @@
 {
-  "name": "Skarbonka - 6 Słoików",
-  "short_name": "Skarbonka",
+  "name": "Skarbonka Milonera 2.0",
+  "short_name": "Milonera 2.0",
   "description": "Licz monety i banknoty, dziel oszczędności metodą 6 słoików",
   "start_url": "./index.html",
   "scope": "./",
