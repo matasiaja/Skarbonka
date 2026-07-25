@@ -11,39 +11,41 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="topbar">
-  <h1>💰 Skarbonka Milonera 2.0</h1>
-  <div class="header-actions">
-    <button id="currencyBtn" class="ghost-btn" title="Zmień walutę">£</button>
-    <button id="resetBtn" class="ghost-btn reset-btn" title="Wyzeruj">↺ Reset</button>
-  </div>
-</header>
-
-<main>
-  <section class="card total-card">
-    <div class="total-row">
-      <span class="total-label">SUMA</span>
-      <span class="total-value" id="totalMoney">£ 0.00</span>
+<div id="app">
+  <header class="topbar">
+    <h1>💰 Skarbonka Milonera 2.0</h1>
+    <div class="header-actions">
+      <button id="currencyBtn" class="ghost-btn" title="Zmień walutę">£</button>
+      <button id="resetBtn" class="ghost-btn reset-btn" title="Wyzeruj">↺ Reset</button>
     </div>
-    <div class="sub-row">
-      <span id="coinCount">0 sztuk</span>
-    </div>
-  </section>
+  </header>
 
-  <section class="card">
-    <h2>Nominały</h2>
-    <div class="denoms" id="denomList"></div>
-  </section>
+  <main>
+    <section class="card total-card">
+      <div class="total-row">
+        <span class="total-label">SUMA</span>
+        <span class="total-value" id="totalMoney">£ 0.00</span>
+      </div>
+      <div class="sub-row">
+        <span id="coinCount">0 sztuk</span>
+      </div>
+    </section>
 
-  <section class="card">
-    <h2>6 Słoików</h2>
-    <div class="jars" id="jarList"></div>
-  </section>
-</main>
+    <section class="card">
+      <h2>Nominały</h2>
+      <div class="denoms" id="denomList"></div>
+    </section>
 
-<footer>
-  <p>Dane zapisują się automatycznie na tym urządzeniu.</p>
-</footer>
+    <section class="card">
+      <h2>6 Słoików</h2>
+      <div class="jars" id="jarList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Dane zapisują się automatycznie na tym urządzeniu.</p>
+  </footer>
+</div>
 
 <script src="app.js"></script>
 </body>

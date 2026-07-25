@@ -25,6 +25,16 @@ body {
   padding-bottom: env(safe-area-inset-bottom);
 }
 
+#app {
+  max-width: 520px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  box-shadow: 0 0 40px rgba(0,0,0,0.4);
+}
+
 .topbar {
   display: flex;
   align-items: center;
@@ -76,8 +86,7 @@ body {
 }
 
 main {
-  max-width: 560px;
-  margin: 0 auto;
+  flex: 1;
   padding: 16px;
   display: flex;
   flex-direction: column;
