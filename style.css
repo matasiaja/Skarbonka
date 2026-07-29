@@ -42,6 +42,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
   padding: calc(env(safe-area-inset-top) + 14px) 16px 14px;
   background: linear-gradient(135deg, #4c1d95, #6d28d9);
   position: sticky;
@@ -52,19 +53,26 @@ body {
 
 .topbar h1 {
   margin: 0;
-  font-size: 17px;
+  font-size: 15px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 360px) {
+  .topbar h1 { font-size: 17px; }
+}
+
+@media (min-width: 420px) {
   .topbar h1 { font-size: 20px; }
 }
 
 .header-actions {
   display: flex;
   gap: 8px;
+  flex: 0 0 auto;
 }
 
 .ghost-btn {
@@ -95,6 +103,12 @@ body {
   width: 19px;
   height: 19px;
   flex: 0 0 auto;
+}
+
+@media (max-width: 359px) {
+  .topbar h1 { font-size: 14px; }
+  .reset-btn { width: 44px; padding: 0; }
+  .reset-btn .reset-label { display: none; }
 }
 
 main {
