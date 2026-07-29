@@ -11,6 +11,7 @@
   --radius-lg: 18px;
   --radius-md: 14px;
   --radius-sm: 10px;
+  --topbar-h: 72px;
 }
 
 * { box-sizing: border-box; }
@@ -147,6 +148,9 @@ main {
     0 14px 28px rgba(30,8,74,0.55),
     0 6px 12px rgba(0,0,0,0.35),
     inset 0 1px 0 rgba(255,255,255,0.16);
+  position: sticky;
+  top: calc(var(--topbar-h) + 8px);
+  z-index: 5;
 }
 
 .total-row {

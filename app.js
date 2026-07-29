@@ -174,6 +174,15 @@ resetBtn.addEventListener('click', () => {
 
 render();
 
+const topbarEl = document.querySelector('.topbar');
+if (topbarEl && 'ResizeObserver' in window) {
+  const syncTopbarHeight = () => {
+    document.documentElement.style.setProperty('--topbar-h', `${topbarEl.offsetHeight}px`);
+  };
+  new ResizeObserver(syncTopbarHeight).observe(topbarEl);
+  syncTopbarHeight();
+}
+
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('sw.js').catch(() => {});
