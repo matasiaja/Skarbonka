@@ -64,14 +64,18 @@ function renderDenoms() {
     const row = document.createElement('div');
     row.className = 'denom-row';
     row.innerHTML = `
-      <div class="denom-value">${cur.symbol} ${fmt(denom)}</div>
-      <button class="row-reset" data-action="reset" data-denom="${denom}" title="Wyzeruj ${cur.symbol} ${fmt(denom)}">↺</button>
-      <div class="stepper">
-        <button data-action="dec" data-denom="${denom}">−</button>
-        <input type="number" inputmode="numeric" min="0" value="${count}" data-denom="${denom}">
-        <button data-action="inc" data-denom="${denom}">+</button>
+      <div class="denom-top">
+        <div class="denom-value">${cur.symbol} ${fmt(denom)}</div>
+        <div class="denom-subtotal">${cur.symbol} ${fmt(subtotal)}</div>
       </div>
-      <div class="denom-subtotal">${cur.symbol} ${fmt(subtotal)}</div>
+      <div class="denom-controls">
+        <button class="row-reset" data-action="reset" data-denom="${denom}" title="Wyzeruj ${cur.symbol} ${fmt(denom)}" aria-label="Wyzeruj ${cur.symbol} ${fmt(denom)}">↺</button>
+        <div class="stepper">
+          <button data-action="dec" data-denom="${denom}" aria-label="Zmniejsz">−</button>
+          <input type="number" inputmode="numeric" min="0" value="${count}" data-denom="${denom}">
+          <button data-action="inc" data-denom="${denom}" aria-label="Zwiększ">+</button>
+        </div>
+      </div>
     `;
     denomListEl.appendChild(row);
   });
