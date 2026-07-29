@@ -69,7 +69,7 @@ function renderDenoms() {
         <div class="denom-subtotal">${cur.symbol} ${fmt(subtotal)}</div>
       </div>
       <div class="denom-controls">
-        <button class="row-reset" data-action="reset" data-denom="${denom}" title="Wyzeruj ${cur.symbol} ${fmt(denom)}" aria-label="Wyzeruj ${cur.symbol} ${fmt(denom)}">↺</button>
+        <button class="row-reset" data-action="reset" data-denom="${denom}" title="Wyzeruj ${cur.symbol} ${fmt(denom)}" aria-label="Wyzeruj ${cur.symbol} ${fmt(denom)}"><svg class="reset-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.34 5.66"/><polyline points="20 4 20 11 13 11"/></svg></button>
         <div class="stepper">
           <button data-action="dec" data-denom="${denom}" aria-label="Zmniejsz">−</button>
           <input type="number" inputmode="numeric" min="0" value="${count}" data-denom="${denom}">
