@@ -40,9 +40,10 @@ body {
 
 .topbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px 10px;
   padding: calc(env(safe-area-inset-top) + 14px) 16px 14px;
   background: linear-gradient(135deg, #4c1d95, #6d28d9);
   position: sticky;
@@ -55,10 +56,7 @@ body {
   margin: 0;
   font-size: 15px;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
-  flex: 1 1 auto;
+  flex: 0 1 auto;
 }
 
 @media (min-width: 360px) {
@@ -73,6 +71,7 @@ body {
   display: flex;
   gap: 8px;
   flex: 0 0 auto;
+  margin-left: auto;
 }
 
 .ghost-btn {
