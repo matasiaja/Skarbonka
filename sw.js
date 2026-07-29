@@ -1,4 +1,4 @@
-const CACHE_NAME = 'skarbonka-v11';
+const CACHE_NAME = 'skarbonka-v12';
 const ASSETS = [
   './',
   './index.html',
